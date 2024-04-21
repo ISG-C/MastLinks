@@ -4,26 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@630&display=swap" rel="stylesheet">
 <title>Office Info</title>
 <style>
+
+body{
+  background-color: #262626;
+}
+
 h1{
-    color: rgb(150, 150, 150);
+    color: #929292;
     font-family: "Open Sans", sans-serif;
     font-size: 24px;
-    font-style: italic;
+
     margin-left: 35px;
 }
 
 .alert {
   position: fixed;
-  top: 10px;
+  top: 40px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #9fffa8;
-  color: #333;
-  padding: 10px 20px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 20px;
+  color: #000000;
+  padding: 20px 20px;
   border-radius: 5px;
   border: 1px solid #ccc;
   display: none;
@@ -35,10 +41,10 @@ h1{
 }
 
 .field {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   align-items: center;
   margin-left: 35px;
-  color: #000000;
+  color: #929292;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -49,7 +55,7 @@ h1{
 
 button {
   background-color: #4CAF50;
-  color: white;
+  color: rgb(255, 255, 255);
   border: none;
   padding: 8px 16px;
   cursor: pointer;
@@ -60,25 +66,27 @@ button {
 }
 
 button:hover {
-  background-color: #39843c;
+  background-color: #075409;
 }
 
 .field p {
   font-size: 12px;
   font-weight: bold;
-  margin-bottom: 3px;
+  margin-bottom: 1.5px;
 }
 
 .field p span {
-  font-size: 22px;
+  font-size: 24px;
+  color: #ffffff;
+  font-family: "Open Sans", sans-serif;
 }
 
 </style>
 </head>
 <body>
 
-<h1>Office Info Copy Text <svg xmlns="http://www.w3.org/2000/svg" width="19.25" height="22" viewBox="0 0 448 512">
-	<path fill="currentColor" d="m433.941 65.941l-51.882-51.882A48 48 0 0 0 348.118 0H176c-26.51 0-48 21.49-48 48v48H48c-26.51 0-48 21.49-48 48v320c0 26.51 21.49 48 48 48h224c26.51 0 48-21.49 48-48v-48h80c26.51 0 48-21.49 48-48V99.882a48 48 0 0 0-14.059-33.941M266 464H54a6 6 0 0 1-6-6V150a6 6 0 0 1 6-6h74v224c0 26.51 21.49 48 48 48h96v42a6 6 0 0 1-6 6m128-96H182a6 6 0 0 1-6-6V54a6 6 0 0 1 6-6h106v88c0 13.255 10.745 24 24 24h88v202a6 6 0 0 1-6 6m6-256h-64V48h9.632c1.591 0 3.117.632 4.243 1.757l48.368 48.368a6 6 0 0 1 1.757 4.243z" />
+<h1>Office Info <svg xmlns="http://www.w3.org/2000/svg" width="30" height="22" viewBox="30 -10 340 350">
+	<path fill="currentColor" d="M0,42.6v313.213h398.414V42.6H0z M132.226,291.156H45.921v-86.305h86.305V291.156z M89.073,181.288 c-23.796,0-43.152-19.357-43.152-43.152s19.357-43.152,43.152-43.152s43.152,19.357,43.152,43.152S112.869,181.288,89.073,181.288 z M350.231,285.929H207.027v-11.934h143.205V285.929z M350.231,226.261H207.027v-11.934h143.205V226.261z M350.231,166.592 H207.027v-11.934h143.205V166.592z M350.231,106.923H207.027V94.99h143.205V106.923z" />
 </svg></h1>
 
 <div class="container">
@@ -113,7 +121,7 @@ button:hover {
     </svg></button>
   </div>
   <div class="field">
-    <p>Client Account Creation - FullName: <br><span id="clientEmail">@tulsa-isg.com</span></p>
+    <p>Account Creation - ClientFullName<br><span id="clientEmail">@tulsa-isg.com</span></p>
     <button onclick="copyClientEmail()"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 448 512">
         <path fill="currentColor" d="M320 448v40c0 13.255-10.745 24-24 24H24c-13.255 0-24-10.745-24-24V120c0-13.255 10.745-24 24-24h72v296c0 30.879 25.121 56 56 56zm0-344V0H152c-13.255 0-24 10.745-24 24v368c0 13.255 10.745 24 24 24h272c13.255 0 24-10.745 24-24V128H344c-13.2 0-24-10.8-24-24m120.971-31.029L375.029 7.029A24 24 0 0 0 358.059 0H352v96h96v-6.059a24 24 0 0 0-7.029-16.97" />
     </svg></button>
