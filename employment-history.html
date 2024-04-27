@@ -14,11 +14,37 @@
 
   /* Style for h1 heading */
   h1 {
-    font-size: 20px; /* Adjust the font size as needed */
+    font-size: 18px; /* Adjust the font size as needed */
   }
   h1 {
     text-align: center;
   }
+
+  #nameForm {
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  /* Style for form labels and inputs */
+  #nameForm label {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  #nameForm input {
+    width: calc(100% - 20px); /* Adjust input width */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+
 
   /* Style for form */
   #employmentForm {
@@ -31,7 +57,7 @@
     display: block;
     margin-bottom: 1px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   #employmentForm input {
@@ -41,7 +67,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   /* Style for results table */
@@ -49,7 +75,7 @@
     width: 70%;
     margin: 20px auto;
     border-collapse: collapse;
-    font-size: 20px;
+    font-size: 15px;
   }
 
   #employmentTable th,
@@ -76,20 +102,25 @@
 <body>
   <h1>Employment History</h1>
 
+  <form id="nameForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+  </form>
+
   <form id="employmentForm" onsubmit="addEmployment(event)">
-    <label for="employer">Employer:</label>
+    <label for="employer">Employer Name</label>
     <input type="text" id="employer" required>
 
-    <label for="employerAddress">Employer Address:</label>
+    <label for="employerAddress">Employer Address</label>
     <input type="text" id="employerAddress" required>
 
-    <label for="position">Position:</label>
+    <label for="position">Position</label>
     <input type="text" id="position" required>
 
-    <label for="dateEntry">Date of Entry:</label>
+    <label for="dateEntry">Date of Entry</label>
     <input type="date" id="dateEntry" required>
 
-    <label for="dateLeft">Date Left:</label>
+    <label for="dateLeft">Date Left</label>
     <input type="date" id="dateLeft" required>
 
     <button type="submit">List Employment</button>
