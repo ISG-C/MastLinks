@@ -20,6 +20,31 @@
     text-align: center;
   }
 
+  #nameForm {
+    width: 40%;
+    margin: 20px auto;
+  }
+
+  /* Style for form labels and inputs */
+  #nameForm label {
+    display: block;
+    margin-bottom: 1px;
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  #nameForm input {
+    width: calc(100% - 20px); /* Adjust input width */
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+
   /* Style for form */
   #addressForm {
     width: 40%;
@@ -76,13 +101,18 @@
 <body>
   <h1>Address History</h1>
 
+  <form id="nameForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+  </form>
+
   <form id="addressForm" onsubmit="addAddress(event)">
-    <label for="address">Address:</label>
+    <label for="address">Address</label>
     <input type="text" id="address" required>
-    <label for="moveInDate">Move-in Date:</label>
+    <label for="moveInDate">Move-in Date</label>
     <input type="date" id="moveInDate" required>
 
-    <label for="moveOutDate">Move-out Date:</label>
+    <label for="moveOutDate">Move-out Date</label>
     <input type="date" id="moveOutDate" required>
 
     <button type="submit">List Address</button>
