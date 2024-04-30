@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<title>Password Generator</title>
+<style>
+    body {
+        background-color: #262626;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ce0f0f00;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+    }
+
+    label {
+        font-size: 17px;
+        display: block;
+        margin-bottom: 8px;
+        color: rgb(255, 255, 255);
+    }
+
+    input[type="number"] {
+        font-size: 17px;
+        background-color: #191919;
+        color: #ffffff;
+        width: 23%;
+        padding: 8px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 25%;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        font-size: 17px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin: 15px;
+
+    }
+
+    button:hover {
+        background-color: #075409;
+    }
+
+    #generated-password {
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        word-break: break-all;
+        margin: 20px;
+    }
+
+    #copy-button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    #copy-button:hover {
+        background-color: #075409;
+    }
+    
+    #copy-message {
+        font-size: 20px;
+        font-weight: bold;
+        color: #34ff34e5;
+        margin-top: 20px;
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1></h1>
+    <br>
+    <label for="length">Password Length:</label>
+    <input type="number" id="length" min="6" max="40" value="12">
+    <br>
+    <button onclick="generatePassword()">Generate</button><br>
+    <button id="copy-button" onclick="copyToClipboard()">Copy</button>
+    <br>
+    <div id="generated-password"></div>
+    <br>
+    <div id="copy-message">copied to clipboard</div>
+</div>
+
+<script>
+    function generatePassword() {
+        var length = document.getElementById('length').value;
+        var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%&*()+:?=";
+        var password = "";
+
+        for (var i = 0; i < length; i++) {
+            var randomIndex = Math.floor(Math.random() * charset.length);
+            password += charset[randomIndex];
+        }
+
+        document.getElementById('generated-password').textContent = password;
+        hideCopyMessage(); // Hide the copy message if visible
+    }
+
+    function copyToClipboard() {
+        var password = document.getElementById('generated-password').textContent;
+
+        if (password) {
+            var textarea = document.createElement('textarea');
+            textarea.value = password;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+            showCopyMessage(); // Show the copy message after copying
+        }
+    }
+
+    function showCopyMessage() {
+        var copyMessage = document.getElementById('copy-message');
+        copyMessage.style.display = 'block';
+        setTimeout(function() {
+            copyMessage.style.display = 'none';
+        }, 15000); // Hide message after 15 seconds
+    }
+
+    function hideCopyMessage() {
+        var copyMessage = document.getElementById('copy-message');
+        copyMessage.style.display = 'none';
+    }
+
+    // Warn before closing tab/window
+    window.addEventListener('beforeunload', function(e) {
+        e.preventDefault();
+        e.returnValue = ''; // Modern browsers ignore this, but it's required for legacy support
+    });
+
+</script>
+
+</body>
+</html>
