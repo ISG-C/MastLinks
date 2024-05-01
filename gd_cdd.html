@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>CLOSE THIS TAB</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Open Two Links</title>
 </head>
-<body>
-  <script>
-    window.onload = function() {
-      window.open('https://isgw.github.io/MasterLinks/google-recent-filter.html', '_blank');
-      window.open('https://raw.githubusercontent.com/ISGW/MasterLinks/ec4063c416dfa793ac2e01b38a344f25f9676ae5/CDD/CASE_DATA_DOC.pdf', '_blank');
-    };
-  </script>
+<body onload="openTwoLinks()">
+<script>
+function openTwoLinks() {
+    // Open the two links in separate tabs
+    var tab1 = window.open('https://isgw.github.io/MasterLinks/google-recent-filter.html', '_blank');
+    var tab2 = window.open('https://raw.githubusercontent.com/ISGW/MasterLinks/ec4063c416dfa793ac2e01b38a344f25f9676ae5/CDD/CASE_DATA_DOC.pdf', '_blank');
+
+    // Close the initial tab after a short delay
+    setTimeout(function() {
+        window.close();
+    }, 10); // 1000 milliseconds (1 second) delay before closing
+}
+</script>
 </body>
 </html>
